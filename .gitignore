@@ -1,0 +1,12 @@
+.idea/
+.idea/workspace.xml
+*/.idea/
+
+*.DS_Store
+nohup.out
+
+*/log
+
+*/Application
+*/Application/*
+Application

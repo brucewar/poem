@@ -1,0 +1,20 @@
+#DB ignore files
+*/db
+*/log
+
+#Console Server ignore files
+*/tracer_log
+
+#Server config ignore files
+/.idea/
+.idea/workspace.xml
+*/.idea/
+.idea/workspace.xml
+
+# WX env emulator file
+*/nginx-1.5.0/logs/
+
+#Log file
+Logs/*
+
+nohup.out
