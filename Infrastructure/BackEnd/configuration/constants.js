@@ -21,6 +21,10 @@ global.MYSQL_DB_PASSWORD = "root";
 
 // db : MongoDB
 global.MONGO_DB_URI = "";
+global.MONGO_DB_SERVER_ADDRESS = "127.0.0.1";
+global.MONGO_DB_NAME = "default_db";
+global.MONGO_DB_USER = null;
+global.MONGO_DB_PASSWORD = null;
 
 // data_set : Aliyun-OSS
 global.OSS_HOST = "oss-cn-hangzhou.aliyuncs.com";

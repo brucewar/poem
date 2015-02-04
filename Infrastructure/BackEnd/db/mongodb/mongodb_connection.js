@@ -8,7 +8,17 @@ var mongoose = require('mongoose');
 var logger = require('../../logging/logger4js').helper;
 
 exports.setMongoDBParameter = function(dbHost, dbName, dbUser, dbPassword) {
-    var dbURI = "mongodb://" + dbHost + "/" + dbName;
+    var dbURI = "mongodb://";
+    if(dbUser) {
+        dbURI += dbUser;
+    }
+    if(dbPassword) {
+        dbURI += ":" + dbPassword;
+    }
+    if(dbUser || dbPassword) {
+        dbURI += "@";
+    }
+    dbURI += dbHost + "/" + dbName;
     mongoose.connect(dbURI);
     exports.mongoDB = mongoose.Schema;
 };
