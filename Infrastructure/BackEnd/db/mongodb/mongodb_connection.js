@@ -26,3 +26,7 @@ exports.setMongoDBParameter = function(dbHost, dbName, dbUser, dbPassword) {
 exports.define = function(schemaName, schemaObj) {
     return mongoose.model(schemaName, schemaObj);
 };
+
+exports.defineByCollection = function(schemaName, schemaObj, collectionName) {
+    return mongoose.model(schemaName, schemaObj, collectionName);
+};
