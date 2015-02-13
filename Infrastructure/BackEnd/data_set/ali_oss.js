@@ -69,8 +69,7 @@ OSS.prototype.getObjectByID = function(objectID, bucketName, callback) {
     });
 };
 
-OSS.prototype.serveObjectByID = function(objectID, bucketType, res, callback) {
-    var bucketName = BUCKETS[bucketType];
+OSS.prototype.serveObjectByID = function(objectID, bucketName, res, callback) {
     // pipe the binary stream to res
     this.ossClient.getObject({
         bucket: bucketName,
