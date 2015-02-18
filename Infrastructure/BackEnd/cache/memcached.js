@@ -42,10 +42,14 @@ Cache.prototype.get = function(key, callback) {
     this.memcached.get(key, function(err, result) {
         var error = errorCode.SUCCESS;
         if(err) {
-            logger.debug("error occurred when getting value for " + key);
+            logger.error("error occurred when getting value for " + key);
             error = errorCode.FAILED;
         }
-        callback(error, result.val.toString());
+        if(result && result.val) {
+            callback(error, result.val.toString());
+        } else {
+            callback(error, null);
+        }
     });
 };
 
@@ -53,7 +57,7 @@ Cache.prototype.delete = function(key, callback) {
     this.memcached.delete(key, function(err) {
         var error = errorCode.SUCCESS;
         if(err) {
-            logger.debug("error occurred when deleting value for " + key);
+            logger.error("error occurred when deleting value for " + key);
             error = errorCode.FAILED;
         }
         callback(error);
