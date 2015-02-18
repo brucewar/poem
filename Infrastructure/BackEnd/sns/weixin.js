@@ -153,7 +153,7 @@ Weixin.prototype.fetchSignature = function(nonceStr, timeStamp, url, jsApiTicket
     shasum.update(src, 'utf-8');
     var digest = shasum.digest('hex');
 
-    // console.log(digest);
+    // console.log("weixin signature fetched : " + digest);
     callback(errorCode.SUCCESS, digest);
 };
 
