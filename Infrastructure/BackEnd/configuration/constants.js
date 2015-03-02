@@ -6,7 +6,7 @@
 // global constants describes the ability sets of the POEM framework
 
 global.VERSION = "1.0.1";
-global.ICODE = "poem~";
+global.ICODE = "PoEM~ V0.1";
 
 // runtime environment
 global.ENV = "dev";
