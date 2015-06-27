@@ -4,6 +4,8 @@
  */
 
 var dateUtils = require('./date_utils');
+var platform = require('platform');
+var UAParser = require('ua-parser-js');
 
 function startup(expressApp, port, serverName) {
     if(expressApp && expressApp.listen && typeof(expressApp.listen) == "function") {
@@ -14,4 +16,17 @@ function startup(expressApp, port, serverName) {
         console.log("driven by " + ICODE + " <(￣︶￣)>");
     }
 }
+
+function getOS() {
+    return platform.os;
+}
+
+function getUAInfo(ua) {
+    var parser = new UAParser();
+    var result = parser.setUA(ua).getResult();
+    return result;
+}
+
 exports.startup = startup;
+exports.getOS = getOS;
+exports.getUAInfo = getUAInfo;
