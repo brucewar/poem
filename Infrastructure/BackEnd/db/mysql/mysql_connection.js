@@ -17,7 +17,7 @@ exports.setMySQLParameter = function(dbHost, dbName, dbUser, dbPassword) {
         database: dbName,
         user: dbUser,
         password: dbPassword,
-        charset  : 'utf8',
+        charset: 'utf8',
         query: { pool: false }
     };
     exports.mysqlDB = orm.connect(ormOpt);
